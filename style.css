@@ -1,0 +1,193 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c2c2c; /* Fundo mais escuro (cinza escuro) */
+    color: #e0e0e0; /* Cor do texto mais clara para contraste */
+    padding: 20px;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative; /* Permite posicionar elementos dentro do cabeçalho */
+}
+
+/* Logo */
+header .logo {
+    max-width: 100px; /* Logo menor */
+    margin-bottom: 10px; /* Menos espaço entre logo e título */
+    border-radius: 50%;
+}
+
+/* Título principal */
+header h1 {
+    font-size: 1.8rem; /* Tamanho menor para o título */
+    color: #b0b0b0; /* Cor do título mais clara */
+    font-weight: 300; /* Font-weight mais leve para um visual mais discreto */
+    text-align: center; /* Garante que o título fique centralizado */
+}
+
+/* Bloco invisível onde a seta ficará */
+#back-button-container {
+    position: fixed; /* Fixa o bloco em relação à janela */
+    top: 60px; /* Remove a distância do topo */
+    bottom: 20px; /* Distância do fundo (aparece mais perto do conteúdo) */
+    left: 20px; /* Distância da esquerda */
+    z-index: 10; /* Garante que o bloco esteja acima de outros elementos */
+    width: 40px; /* Largura do bloco */
+    height: 40px; /* Altura do bloco */
+    visibility: hidden; /* Inicialmente invisível */
+}
+
+/* Estilo para o botão de seta dentro do bloco */
+.back-button {
+    position: absolute; /* A seta será posicionada dentro do bloco */
+    top: 0;
+    left: 5;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Efeito hover da seta */
+.back-button:hover {
+    color: #b0b0b0;
+}
+
+/* Estilo para o container de postagens */
+#post-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilo para cada post */
+.post {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: scale(1.05);
+}
+
+.post h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+
+.post p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #d0d0d0;
+}
+
+.post .date {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* Estilo para a nova seção de post */
+.post-content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.post-content p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+/* Estilo para a nova seção de conteúdo */
+.post-content-section {
+    margin-top: 60px;
+}
+
+.post-content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+.post-content-section div {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.post-content-section .date {
+    font-size: 1rem;
+    color: #999;
+    margin-top: 20px;
+}
+
+/* Estilo para o botão "Sobre" */
+#sobre-btn {
+    background-color: #3b3b3b;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+#sobre-btn:hover {
+    background-color: #575757;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    z-index: 9999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.modal-content {
+    background-color: #444;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
